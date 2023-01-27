@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		42FC0F4C8D6E24BF4901698B /* Pods_RocketTap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61A6618AFBC1A50FC582B4FE /* Pods_RocketTap.framework */; };
+		4F1D322A29847B2800225C9F /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1D322929847B2800225C9F /* LogoView.swift */; };
+		4F1D322C29847C5F00225C9F /* UILabel + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1D322B29847C5F00225C9F /* UILabel + Extension.swift */; };
 		4F915407298460E700CBDABA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F915406298460E700CBDABA /* AppDelegate.swift */; };
 		4F915410298460E800CBDABA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F91540F298460E800CBDABA /* Assets.xcassets */; };
 		4F915413298460E800CBDABA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F915411298460E800CBDABA /* LaunchScreen.storyboard */; };
@@ -17,6 +19,8 @@
 /* Begin PBXFileReference section */
 		3869B597C411E039C868F64D /* Pods-RocketTap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RocketTap.debug.xcconfig"; path = "Target Support Files/Pods-RocketTap/Pods-RocketTap.debug.xcconfig"; sourceTree = "<group>"; };
 		3D294CEF3E5019AFBED0D976 /* Pods-RocketTap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RocketTap.release.xcconfig"; path = "Target Support Files/Pods-RocketTap/Pods-RocketTap.release.xcconfig"; sourceTree = "<group>"; };
+		4F1D322929847B2800225C9F /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
+		4F1D322B29847C5F00225C9F /* UILabel + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + Extension.swift"; sourceTree = "<group>"; };
 		4F915403298460E700CBDABA /* RocketTap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RocketTap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F915406298460E700CBDABA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F91540F298460E800CBDABA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -44,8 +48,15 @@
 				3869B597C411E039C868F64D /* Pods-RocketTap.debug.xcconfig */,
 				3D294CEF3E5019AFBED0D976 /* Pods-RocketTap.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		4F14E72829847A8A0026E342 /* UIKit Custom */ = {
+			isa = PBXGroup;
+			children = (
+				4F1D322929847B2800225C9F /* LogoView.swift */,
+			);
+			path = "UIKit Custom";
 			sourceTree = "<group>";
 		};
 		4F9153FA298460E700CBDABA = {
@@ -72,6 +83,7 @@
 				4F91541D2984620F00CBDABA /* App */,
 				4F91541E2984632000CBDABA /* Models */,
 				4F91541F2984632600CBDABA /* Controllers */,
+				4F14E72829847A8A0026E342 /* UIKit Custom */,
 				4F91541C298461FE00CBDABA /* UIKit + Extensions */,
 				4F91541B298461C500CBDABA /* Resources */,
 				4F91541A298461B900CBDABA /* Settings */,
@@ -98,6 +110,7 @@
 		4F91541C298461FE00CBDABA /* UIKit + Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				4F1D322B29847C5F00225C9F /* UILabel + Extension.swift */,
 			);
 			path = "UIKit + Extensions";
 			sourceTree = "<group>";
@@ -249,6 +262,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F915407298460E700CBDABA /* AppDelegate.swift in Sources */,
+				4F1D322A29847B2800225C9F /* LogoView.swift in Sources */,
+				4F1D322C29847C5F00225C9F /* UILabel + Extension.swift in Sources */,
 				4F915421298463EB00CBDABA /* MenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
