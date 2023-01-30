@@ -10,15 +10,29 @@ import SnapKit
 
 class GameViewController: UIViewController {
     
-    let playButton = ButtonWithLogo(frame: CGRect(x: 0, y: 0, width: 80, height: 80))
+    var game: GameModel!
+    
+    var timer: Timer!
+    
+    let playButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = #colorLiteral(red: 0, green: 0.6433480978, blue: 1, alpha: 1)
+        button.layer.cornerRadius = 40
+        button.frame = CGRect(x: 100, y: 100, width: 100, height: 100)
+        return button
+    }()
+    
+    let gameZone = UIView()
+    
     let pointsView = GameInfoView(titleLabel: "Нажато", pointsLabel: "0", color: #colorLiteral(red: 0, green: 0.6433480978, blue: 1, alpha: 1))
-    let timerView = GameInfoView(titleLabel: "Время", pointsLabel: "1:00", color: UIColor.gray.cgColor)
+    let timerView = GameInfoView(titleLabel: "Время", pointsLabel: "60", color: UIColor.gray.cgColor)
 
     
     override func loadView() {
         super.loadView()
         
         view.backgroundColor = #colorLiteral(red: 0.03225039318, green: 0.1574034691, blue: 0.2082021534, alpha: 1)
+        game = GameModel()
     }
     
     override func viewDidLoad() {
@@ -26,10 +40,13 @@ class GameViewController: UIViewController {
         
         setupSubviews()
         addConstraints()
+        
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(startTimer), userInfo: nil, repeats: true)
     }
     
     private func setupSubviews() {
-        view.addSubview(playButton)
+        view.addSubview(gameZone)
+        gameZone.addSubview(playButton)
         view.addSubview(pointsView)
         view.addSubview(timerView)
         
@@ -38,6 +55,33 @@ class GameViewController: UIViewController {
         }
         
         pointsView.addImage()
+        
+        playButton.addTarget(self, action: #selector(playButtonTap), for: .touchUpInside)
+    }
+    
+    @objc private func playButtonTap() {
+        let randomWidth = CGFloat(arc4random_uniform(UInt32(gameZone.frame.width - 50)))
+        let randomHeight = CGFloat(arc4random_uniform(UInt32(gameZone.frame.height - 50)))
+        
+        UIView.animate(withDuration: 0.1) {
+            self.playButton.transform = CGAffineTransform(translationX: randomWidth, y: randomHeight)
+        }
+        
+        game.calculatedScore()
+        pointsView.valueLabel.text = "\(game.score)"
+    }
+    
+    @objc private func startTimer() {
+        if game.timeLeft > 0 {
+            game.timeLeft -= 1
+        } else {
+            let vc = GameOverViewController(gameModel: game)
+            vc.modalPresentationStyle = .fullScreen
+            present(vc, animated: true)
+            
+            timer.invalidate()
+        }
+        timerView.valueLabel.text = game.timeLeft.description
     }
     
 }
@@ -46,8 +90,15 @@ class GameViewController: UIViewController {
 
 extension GameViewController {
     private func addConstraints() {
+        gameZone.snp.makeConstraints { make in
+            make.top.equalTo(view.snp.topMargin).offset(65)
+            make.leading.equalToSuperview().offset(50)
+            make.trailing.equalToSuperview().offset(-50)
+            make.bottom.equalTo(pointsView.snp.top).offset(-80)
+        }
+        
         playButton.snp.makeConstraints { make in
-            make.centerY.centerX.equalToSuperview().offset(0)
+            make.height.width.equalTo(80)
         }
         
         pointsView.snp.makeConstraints { make in

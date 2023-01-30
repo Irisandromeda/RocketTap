@@ -9,15 +9,15 @@ import UIKit
 
 class GameInfoView: UIView {
     
-    let titleLabel = UILabel(text: "Нажато", textColor: #colorLiteral(red: 0, green: 0.6433480978, blue: 1, alpha: 1), font: .spaceGroteskRegular(size: 14), textAlignment: .center)
-    let pointsLabel = UILabel(text: "0", textColor: .white, font: .spaceGroteskBold(size: 30), textAlignment: .left)
+    let titleLabel = UILabel()
+    let valueLabel = UILabel()
     let gradientView = GradientView(from: .bottomLeading, to: .topTrailing, startColor: #colorLiteral(red: 0, green: 0.5647058824, blue: 1, alpha: 1), endColor: #colorLiteral(red: 0, green: 0.3363192081, blue: 1, alpha: 1), cornerRadius: 12)
     
     init(titleLabel: String, pointsLabel: String, color: CGColor) {
         super.init(frame: .zero)
         
         self.titleLabel.text = titleLabel
-        self.pointsLabel.text = pointsLabel
+        self.valueLabel.text = pointsLabel
         self.layer.borderColor = color
         self.titleLabel.textColor = UIColor(cgColor: color)
         
@@ -33,8 +33,11 @@ class GameInfoView: UIView {
         layer.borderWidth = 1
         layer.cornerRadius = 16
         
+        titleLabel.font = .spaceGroteskRegular(size: 14)
+        valueLabel.font = .spaceGroteskBold(size: 30)
+        
         addSubview(titleLabel)
-        addSubview(pointsLabel)
+        addSubview(valueLabel)
     }
     
     func addImage() {
@@ -54,11 +57,10 @@ class GameInfoView: UIView {
 
 private extension GameInfoView {
     private func addConstraints() {
-        pointsLabel.translatesAutoresizingMaskIntoConstraints = false
+        valueLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        pointsLabel.snp.makeConstraints { make in
-            make.centerY.equalTo(self).offset(0)
-            make.leading.equalToSuperview().offset(44)
+        valueLabel.snp.makeConstraints { make in
+            make.center.equalToSuperview()
         }
         
         titleLabel.translatesAutoresizingMaskIntoConstraints = false

@@ -10,10 +10,22 @@ import SnapKit
 
 class GameOverViewController: UIViewController {
     
+    var game: GameModel!
+    
+    init(gameModel: GameModel) {
+        super.init(nibName: nil, bundle: nil)
+        
+        game = gameModel
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     let backgroundImage = UIImageView(imageName: "background", contentMode: .scaleAspectFit)
     let gameOverView = GameOverView()
-    let restartButton = GradientButton(title: "Начать заново", titleColor: .white)
-    let shareButton = GradientButton(title: "Поделиться", titleColor: .white)
+    let restartButton = UIButton(title: "Начать заново", titleColor: .white, backgroundColor: #colorLiteral(red: 0, green: 0.5647058824, blue: 1, alpha: 1), cornerRadius: 16, font: .spaceGroteskRegular(size: 18))
+    let shareButton = UIButton(title: "Поделиться", titleColor: .white, backgroundColor: #colorLiteral(red: 0, green: 0.5647058824, blue: 1, alpha: 1), cornerRadius: 16, font: .spaceGroteskRegular(size: 18))
     
     override func loadView() {
         super.loadView()
@@ -26,6 +38,7 @@ class GameOverViewController: UIViewController {
         
         setupSubviews()
         addConstraints()
+        updateData()
     }
     
     private func setupSubviews() {
@@ -34,11 +47,25 @@ class GameOverViewController: UIViewController {
         view.addSubview(restartButton)
         view.addSubview(shareButton)
         
-        shareButton.layer.opacity = 0.6
-        
         view.subviews.forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
+        
+        shareButton.layer.opacity = 0.6
+        restartButton.addTarget(self, action: #selector(restartButtonTap), for: .touchUpInside)
+    }
+    
+    private func updateData() {
+        gameOverView.pointsLabel.text = game.score.description
+        gameOverView.descriptionLabel.text = "Ваш результат \(game.score) точек! Это больше чем у 87% игроков."
+    }
+    
+    @objc private func restartButtonTap() {
+        game.restartGame()
+        
+        let vc = GameViewController()
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
     }
     
 }

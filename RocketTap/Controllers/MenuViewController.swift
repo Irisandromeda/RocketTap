@@ -17,12 +17,13 @@ class MenuViewController: UIViewController {
     let descriptionLabel = UILabel(text: "Нажми как можно больше точек за 1 минуту, соревнуйся с другими игроками", textColor: .gray, font: .spaceGroteskRegular(size: 18), textAlignment: .center)
     let appVersionLabel = UILabel(text: "RocketTap v1.0", textColor: .gray, font: .spaceGroteskRegular(size: 18), textAlignment: .center)
     
-    let startButton = GradientButton(title: "Начать игру", titleColor: .white)
+    let startButton = UIButton(title: "Начать игру", titleColor: .white, backgroundColor: #colorLiteral(red: 0, green: 0.5647058824, blue: 1, alpha: 1), cornerRadius: 16, font: .spaceGroteskRegular(size: 18))
     
     override func loadView() {
         super.loadView()
         
         view.backgroundColor = #colorLiteral(red: 0.03225039318, green: 0.1574034691, blue: 0.2082021534, alpha: 1)
+        navigationController?.navigationBar.isHidden = true
     }
     
     override func viewDidLoad() {
@@ -43,6 +44,14 @@ class MenuViewController: UIViewController {
         }
         
         descriptionLabel.numberOfLines = 0
+        
+        startButton.addTarget(self, action: #selector(startButtonTap), for: .touchUpInside)
+    }
+    
+    @objc private func startButtonTap() {
+        let vc = GameViewController()
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
     }
     
 }

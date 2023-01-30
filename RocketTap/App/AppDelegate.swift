@@ -18,10 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = MenuViewController()
         window?.makeKeyAndVisible()
         
-        window?.backgroundColor = .black
-        
         return true
     }
 
 }
-

@@ -17,14 +17,12 @@
 		4F6B69A229858534009156CE /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6B69A129858534009156CE /* GameOverViewController.swift */; };
 		4F6B69A4298588E6009156CE /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6B69A3298588E6009156CE /* LogoView.swift */; };
 		4F6B69A629858D87009156CE /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6B69A529858D87009156CE /* GameOverView.swift */; };
-		4F6B69AA2985ED19009156CE /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6B69A92985ED19009156CE /* GradientButton.swift */; };
 		4F8D21A5298495F2008A883A /* SpaceGrotesk-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F8D21A4298495F2008A883A /* SpaceGrotesk-Regular.ttf */; };
 		4F8D21A72984967A008A883A /* SpaceGrotesk-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F8D21A62984967A008A883A /* SpaceGrotesk-Bold.ttf */; };
 		4F8D21AA298496C2008A883A /* UIFont + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8D21A9298496C2008A883A /* UIFont + Extension.swift */; };
 		4F8D21AC29849A15008A883A /* UIStackView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8D21AB29849A15008A883A /* UIStackView + Extension.swift */; };
 		4F8D21AE2984A22E008A883A /* UIButton + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8D21AD2984A22E008A883A /* UIButton + Extension.swift */; };
 		4F8D21B02984A3F4008A883A /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8D21AF2984A3F4008A883A /* GradientView.swift */; };
-		4F8D21B82984BB8D008A883A /* CAGradientLayer + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8D21B72984BB8D008A883A /* CAGradientLayer + Extension.swift */; };
 		4F915407298460E700CBDABA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F915406298460E700CBDABA /* AppDelegate.swift */; };
 		4F915410298460E800CBDABA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F91540F298460E800CBDABA /* Assets.xcassets */; };
 		4F915413298460E800CBDABA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F915411298460E800CBDABA /* LaunchScreen.storyboard */; };
@@ -43,14 +41,12 @@
 		4F6B69A129858534009156CE /* GameOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
 		4F6B69A3298588E6009156CE /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 		4F6B69A529858D87009156CE /* GameOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverView.swift; sourceTree = "<group>"; };
-		4F6B69A92985ED19009156CE /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
 		4F8D21A4298495F2008A883A /* SpaceGrotesk-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpaceGrotesk-Regular.ttf"; sourceTree = "<group>"; };
 		4F8D21A62984967A008A883A /* SpaceGrotesk-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpaceGrotesk-Bold.ttf"; sourceTree = "<group>"; };
 		4F8D21A9298496C2008A883A /* UIFont + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Extension.swift"; sourceTree = "<group>"; };
 		4F8D21AB29849A15008A883A /* UIStackView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extension.swift"; sourceTree = "<group>"; };
 		4F8D21AD2984A22E008A883A /* UIButton + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Extension.swift"; sourceTree = "<group>"; };
 		4F8D21AF2984A3F4008A883A /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
-		4F8D21B72984BB8D008A883A /* CAGradientLayer + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CAGradientLayer + Extension.swift"; sourceTree = "<group>"; };
 		4F915403298460E700CBDABA /* RocketTap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RocketTap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F915406298460E700CBDABA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F91540F298460E800CBDABA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -87,7 +83,6 @@
 				4F6B69A3298588E6009156CE /* LogoView.swift */,
 				4F6B699D298569DC009156CE /* GameInfoView.swift */,
 				4F6B69A529858D87009156CE /* GameOverView.swift */,
-				4F6B69A92985ED19009156CE /* GradientButton.swift */,
 				4F6B699829855F21009156CE /* ButtonWithLogo.swift */,
 				4F8D21AF2984A3F4008A883A /* GradientView.swift */,
 			);
@@ -168,7 +163,6 @@
 				4F8D21A9298496C2008A883A /* UIFont + Extension.swift */,
 				4F8D21AB29849A15008A883A /* UIStackView + Extension.swift */,
 				4F8D21AD2984A22E008A883A /* UIButton + Extension.swift */,
-				4F8D21B72984BB8D008A883A /* CAGradientLayer + Extension.swift */,
 			);
 			path = "UIKit + Extensions";
 			sourceTree = "<group>";
@@ -325,7 +319,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F8D21AA298496C2008A883A /* UIFont + Extension.swift in Sources */,
-				4F8D21B82984BB8D008A883A /* CAGradientLayer + Extension.swift in Sources */,
 				4F1D324E2984885100225C9F /* UIImageView + Extension.swift in Sources */,
 				4F915407298460E700CBDABA /* AppDelegate.swift in Sources */,
 				4F6B69A229858534009156CE /* GameOverViewController.swift in Sources */,
@@ -339,7 +332,6 @@
 				4F6B699729855D39009156CE /* GameViewController.swift in Sources */,
 				4F6B699B298565A0009156CE /* GameModel.swift in Sources */,
 				4F6B69A629858D87009156CE /* GameOverView.swift in Sources */,
-				4F6B69AA2985ED19009156CE /* GradientButton.swift in Sources */,
 				4F915421298463EB00CBDABA /* MenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
